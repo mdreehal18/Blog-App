@@ -8,7 +8,7 @@ require('dotenv').config()
 
 //authorApp.use(clerkMiddleware())
 //create new author
-authorApp.post("/author", expressAsyncHandler(createUserOrAuthor))
+authorApp.post("/author", expressAsyncHandler(createUserorAuthor))
 
 //create new article
 authorApp.post("/article", expressAsyncHandler(async (req, res) => {

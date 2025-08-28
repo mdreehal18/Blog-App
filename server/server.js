@@ -4,7 +4,7 @@ require('dotenv').config();//process.env
 const mongoose = require("mongoose");
 const userApp = require("./APIs/UserApi");
 const authorApp = require("./APIs/AuthorApi");
-const adminApp = require("./APIs/AdminApi");
+const AdminApp = require("./APIs/AdminApi");
 const cors=require('cors')
 app.use(cors())
 
