@@ -2,9 +2,9 @@ const exp = require("express");
 const app = exp();
 require('dotenv').config();//process.env
 const mongoose = require("mongoose");
-const userApp = require("./APIs/userApi");
-const authorApp = require("./APIs/authorApi");
-const adminApp = require("./APIs/adminApi");
+const userApp = require("./APIs/UserApi");
+const authorApp = require("./APIs/AuthorApi");
+const adminApp = require("./APIs/AdminApi");
 const cors=require('cors')
 app.use(cors())
 
@@ -23,8 +23,7 @@ app.use(exp.json())
 //connect API rouites
 app.use('/user-api',userApp)
 app.use("/author-api",authorApp)
-app.use('/admin-api',adminApp)
-
+app.use('/admin-api',AdminApp)
 
 //error handler
 app.use((err,req,res,next)=>{
