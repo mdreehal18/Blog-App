@@ -1,6 +1,6 @@
 const UserAuthor=require("../models/userAuthorModel")
 
-async function createUserOrAuthor(req,res){
+async function createUserorAuthor(req,res){
     //business logic to create User or Author
         //get user or author object from req
         const newUserAuthor=req.body;
