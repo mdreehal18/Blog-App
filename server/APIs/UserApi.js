@@ -2,7 +2,7 @@ const exp=require('express')
 const userApp=exp.Router();
 const UserAuthor=require("../models/userAuthorModel")
 const expressAsyncHandler=require("express-async-handler");
-const createUserOrAuthor=require("./createUserorAuthor");
+const createUserorAuthor=require("./createUserorAuthor");
 const Article=require("../models/articleModel")
 
 //API
