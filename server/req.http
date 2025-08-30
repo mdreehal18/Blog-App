@@ -1,15 +1,15 @@
-# GET http://localhost:4000/user-api/users
+# GET https://blog-app-1-0tmy.onrender.com/user-api/users
 
 # ###
-# GET http://localhost:4000/Admin-api
+# GET https://blog-app-1-0tmy.onrender.com/Admin-api
 # ###
-# GET http://localhost:4000/Author-api
+# GET https://blog-app-1-0tmy.onrender.com/Author-api
 
 
 
 
 ### create author
-POST http://localhost:4000/author-api/author
+POST https://blog-app-1-0tmy.onrender.com/author-api/author
 Content-Type: application/json
 
 {
@@ -22,7 +22,7 @@ Content-Type: application/json
 }
 
 ###create user
-POST http://localhost:4000/user-api/user
+POST https://blog-app-1-0tmy.onrender.com/user-api/user
 Content-Type: application/json
 
 {
@@ -37,7 +37,7 @@ Content-Type: application/json
 
 
 ###post new article
-POST http://localhost:4000/author-api/article
+POST https://blog-app-1-0tmy.onrender.com/author-api/article
 Content-Type: application/json
 
 {
@@ -61,16 +61,16 @@ Content-Type: application/json
 
 
 ### Read all articles by user
-GET http://localhost:4000/user-api/articles
+GET https://blog-app-1-0tmy.onrender.com/user-api/articles
 
 
 ### Read all articles by author
-GET http://localhost:4000/author-api/articles
+GET https://blog-app-1-0tmy.onrender.com/author-api/articles
 
 
 
 ### edit article by id
-PUT http://localhost:4000/author-api/article/1745257420
+PUT https://blog-app-1-0tmy.onrender.com/author-api/article/1745257420
 Content-Type: application/json
 
 {
@@ -92,7 +92,7 @@ Content-Type: application/json
 }
 
 ### post comment by article id
-PUT http://localhost:4000/user-api/comment/1745256173
+PUT https://blog-app-1-0tmy.onrender.com/user-api/comment/1745256173
 Content-Type: application/json
 
 {
@@ -102,7 +102,7 @@ Content-Type: application/json
 }
 
 ### delete atricle by article id
-PUT http://localhost:4000/author-api/article/articleId
+PUT https://blog-app-1-0tmy.onrender.com/author-api/article/articleId
 Content-Type: application/json
 
 {

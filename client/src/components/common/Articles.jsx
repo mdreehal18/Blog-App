@@ -1,7 +1,7 @@
-import { useState, useEffect } from 'react'
+import { useAuth } from '@clerk/clerk-react'
 import axios from 'axios'
-import {useNavigate} from 'react-router-dom'
-import {useAuth} from '@clerk/clerk-react'
+import { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 
 function Articles() {
@@ -16,7 +16,7 @@ function Articles() {
     //get jwt token
     const token=await getToken()
     //make authenticated req
-    let res = await axios.get('http://localhost:4000/author-api/articles',{
+    let res = await axios.get('https://blog-app-1-0tmy.onrender.com/author-api/articles',{
       headers:{
         Authorization:`Bearer ${token}`
       }

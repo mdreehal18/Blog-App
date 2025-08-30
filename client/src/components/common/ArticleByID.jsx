@@ -1,13 +1,12 @@
 
+import { useAuth } from '@clerk/clerk-react'
+import axios from 'axios'
 import { useContext, useState } from 'react'
-import { useLocation } from 'react-router-dom'
-import { userAuthorContextObj } from '../../contexts/UserAuthorContext'
+import { useForm } from 'react-hook-form'
 import { FaEdit } from 'react-icons/fa'
 import { MdDelete, MdRestore } from 'react-icons/md'
-import { useForm } from 'react-hook-form'
-import axios from 'axios'
-import { useNavigate } from 'react-router-dom'
-import { useAuth } from '@clerk/clerk-react'
+import { useLocation, useNavigate } from 'react-router-dom'
+import { userAuthorContextObj } from '../../contexts/UserAuthorContext'
 
 
 function ArticleByID() {
@@ -37,7 +36,7 @@ function ArticleByID() {
     articleAfterChanges.dateOfModification = currentDate.getDate() + "-" + currentDate.getMonth() + "-" + currentDate.getFullYear()
 
     //make http post req
-    let res = await axios.put(`http://localhost:4000/author-api/article/${articleAfterChanges.articleId}`,
+    let res = await axios.put(`https://blog-app-1-0tmy.onrender.com/author-api/article/${articleAfterChanges.articleId}`,
       articleAfterChanges,
       {
         headers: {
@@ -61,7 +60,7 @@ function ArticleByID() {
     commentObj.nameOfUser=currentUser.firstName;
     console.log(commentObj)
     //http put
-    let res=await axios.put(`http://localhost:4000/user-api/comment/${currentArticle.articleId}`,commentObj);
+    let res=await axios.put(`https://blog-app-1-0tmy.onrender.com/user-api/comment/${currentArticle.articleId}`,commentObj);
     if(res.data.message==='comment added'){
       setCommentStatus(res.data.message)
     }
@@ -71,7 +70,7 @@ function ArticleByID() {
   //delete article
   async function deleteArticle(){
     state.isArticleActive=false;
-    let res=await axios.put(`http://localhost:4000/author-api/articles/${state.articleId}`,state)
+    let res=await axios.put(`https://blog-app-1-0tmy.onrender.com/author-api/articles/${state.articleId}`,state)
     if(res.data.message==='article deleted or restored'){
       setCurrentArticle(res.data.payload)
   }
@@ -79,7 +78,7 @@ function ArticleByID() {
   //restore article
   async function restoreArticle(){
     state.isArticleActive=true;
-    let res=await axios.put(`http://localhost:4000/author-api/articles/${state.articleId}`,state)
+    let res=await axios.put(`https://blog-app-1-0tmy.onrender.com/author-api/articles/${state.articleId}`,state)
     if(res.data.message==='article deleted or restored'){
         setCurrentArticle(res.data.payload)
     }
